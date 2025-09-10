@@ -4,6 +4,7 @@ import background from '../assets/background_Image.jpg'
 import { validateData } from '../utils/validation';
 import {signIn} from '../firebase/signIn.js';
 import {signUp} from '../firebase/signUp.js';
+import { useNavigate } from 'react-router';
 
 function Login() {
     const email = useRef(null) // initial value is null;
@@ -11,6 +12,7 @@ function Login() {
     const [isSignIn, setIsSignIn] = React.useState(true);
     const [errorEmail, setErrorEmail] = React.useState(null);
     const [errorPassword, setErrorPassword] = React.useState(null);
+    const navigate = useNavigate();
 
 
     const handleButtonClick = async (e) => {
@@ -37,12 +39,12 @@ function Login() {
             // create a new user 
             if(!isSignIn) {
                 const user = await signUp(email.current.value, password.current.value);
-                console.log(user);
+                navigate('/browse');
             }
             // sign in the user
             else{
                 const user = await signIn(email.current.value, password.current.value);
-                console.log("udit " +user);
+                navigate('/browse');
             }
         } catch(err) {
             console.log("hello" + err);
