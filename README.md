@@ -11,7 +11,8 @@
 - Firebase setup
 - Firebase deploy to production
 - Authentication added through firebase
-- 
+- Implemented signout
+- Implemented the displayName
 
 
 # PENDING

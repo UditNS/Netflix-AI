@@ -5,14 +5,19 @@ import { validateData } from '../utils/validation';
 import {signIn} from '../firebase/signIn.js';
 import {signUp} from '../firebase/signUp.js';
 import { useNavigate } from 'react-router';
+import { updateProfile } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../store/userSlice.js';
 
 function Login() {
     const email = useRef(null) // initial value is null;
     const password = useRef(null) 
+    const displayName = useRef(null)
     const [isSignIn, setIsSignIn] = React.useState(true);
     const [errorEmail, setErrorEmail] = React.useState(null);
     const [errorPassword, setErrorPassword] = React.useState(null);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
 
     const handleButtonClick = async (e) => {
@@ -39,7 +44,12 @@ function Login() {
             // create a new user 
             if(!isSignIn) {
                 const user = await signUp(email.current.value, password.current.value);
-                navigate('/browse');
+                updateProfile(user, {
+                    displayName: displayName.current.value, 
+                    }).then(() => {
+                        navigate('/browse');
+                        dispatch(setUser({uid: uid, email: email, name: displayName}))
+                    }).catch((error) => {console.log(error)});
             }
             // sign in the user
             else{
@@ -63,6 +73,7 @@ return (
     <form onSubmit={handleButtonClick} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col space-y-4 text-center w-2/6 bg-black/70 py-18 px-14 rounded-sm '>
         <p className='text-white flex font-semibold text-3xl items-start w-full mb-8'>{isSignIn ? "Sign In" : "Sign Up"}</p>
         {!isSignIn && (<input 
+            ref={displayName}
             type="text" 
             placeholder='Name' 
             className='px-4 py-3 mb-4 rounded-sm bg-[#1e201f]/60 text-white border border-gray-500 outline-none focus:ring-2 focus:ring-white w-full' 
