@@ -8,3 +8,5 @@
 - Sign up form toggle switch
 - Form Validation
 - Implemented useRef hook
+- Firebase setup
+- Firebase deploy to production
