@@ -83,7 +83,7 @@ return (
         <p className={`text-red-500 font-light ${errorPassword ? "flex" : "hidden"} items-start `}>{errorPassword}</p>
         <button 
             type="submit"
-            className='bg-red-600 px-6 py-3 rounded-sm font-bold text-white hover:bg-red-700 transition-colors duration-300 w-full cursor-pointer'
+            className='bg-[#E50914] px-6 py-3 rounded-sm font-bold text-white hover:bg-red-700 transition-colors duration-300 w-full cursor-pointer'
         >
             {isSignIn ? "Sign In" : "Sign Up"}
         </button>
