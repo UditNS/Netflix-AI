@@ -10,3 +10,9 @@
 - Implemented useRef hook
 - Firebase setup
 - Firebase deploy to production
+- Authentication added through firebase
+- 
+
+
+# PENDING
+- ERROR handling in login and signup 
