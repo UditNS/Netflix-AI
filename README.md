@@ -6,3 +6,5 @@
 - Routing in App.jsx
 - Sign in Form
 - Sign up form toggle switch
+- Form Validation
+- Implemented useRef hook
