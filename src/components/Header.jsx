@@ -23,7 +23,7 @@ function Header() {
 
     useEffect(() => {
     // This is the recommended way to check for auth state changes. Provided by firebase
-    onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
             const {uid, email, displayName} = user;
             dispatch(setUser({uid: uid, email: email, name: displayName}));
@@ -34,6 +34,9 @@ function Header() {
             navigate('/');
         }
         });
+        return () => unsubscribe();
+        // cleanup function to avoid memory leaks
+        // it unsubscribes the listener when the component unmounts
     },[])
 
     
