@@ -4,7 +4,6 @@ import background from '../assets/background_Image.jpg'
 import { validateData } from '../utils/validation';
 import {signIn} from '../firebase/signIn.js';
 import {signUp} from '../firebase/signUp.js';
-import { useNavigate } from 'react-router';
 import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../store/userSlice.js';
@@ -16,7 +15,6 @@ function Login() {
     const [isSignIn, setIsSignIn] = React.useState(true);
     const [errorEmail, setErrorEmail] = React.useState(null);
     const [errorPassword, setErrorPassword] = React.useState(null);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
 
@@ -44,20 +42,18 @@ function Login() {
             // create a new user 
             if(!isSignIn) {
                 const user = await signUp(email.current.value, password.current.value);
-                updateProfile(user, {
+                await updateProfile(user, {
                     displayName: displayName.current.value, 
                     }).then(() => {
-                        navigate('/browse');
                         dispatch(setUser({uid: uid, email: email, name: displayName}))
                     }).catch((error) => {console.log(error)});
             }
             // sign in the user
             else{
                 const user = await signIn(email.current.value, password.current.value);
-                navigate('/browse');
             }
         } catch(err) {
-            console.log("hello" + err);
+            console.log(err);
         }
     }
     // Now when i got the user object I want the user to be redirected to the Browse page and also maintain the logged in state across the app. For that I will use Redux Toolkit and React Router.

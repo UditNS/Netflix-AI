@@ -13,7 +13,9 @@
 - Authentication added through firebase
 - Implemented signout
 - Implemented the displayName
+- ADDED THE FUNCTIONALITY OF AUTHERIZED USER TO can't do to login and unautherized user can't go to browse page.
 
 
 # PENDING
 - ERROR handling in login and signup 
+- UPDATE USER & REDUX ERROR
