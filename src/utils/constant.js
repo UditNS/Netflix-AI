@@ -6,6 +6,6 @@ export const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_APR_READ_ACCESS_TOKEN_TMDB}`
+        Authorization: `Bearer ${import.meta.env.VITE_API_READ_ACCESS_TOKEN_TMDB}`
     }
 };
