@@ -1,12 +1,17 @@
 import React from 'react'
 import Header from './Header'
+import MainContainer from './mainContainer/MainContainer'
+import SecondaryContainer from './SecondaryContainer'
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 
 function Browse() {
     useNowPlayingMovies();
     return (
-        
-        <Header />
+        <>
+            <Header />
+            <MainContainer />
+            <SecondaryContainer />
+        </>
         /* 
             MainContainer
             - VideoBackground
@@ -14,7 +19,6 @@ function Browse() {
             SecondaryContainer
             - MovieList * n  (horizontally scrollable)
                 -Card * m (m movies in each list)
-
         */
     )
 }
