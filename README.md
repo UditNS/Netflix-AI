@@ -15,6 +15,8 @@
 - Implemented the displayName
 - ADDED THE FUNCTIONALITY OF AUTHERIZED USER TO can't do to login and unautherized user can't go to browse page.
 - Unsubscribe to the onAuthStateChanged callback
+- Added hardcoded values to the constant string
+- Registered for TMDB api, along with that make an api call for now playing movies
 
 
 # PENDING
