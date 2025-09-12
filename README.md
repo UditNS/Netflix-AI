@@ -24,7 +24,8 @@
 - VideoPlayback plays the trailer video in background
 - VideoTitle contain video title and overview.
 - Added css to fadeout the overview after 10 secs
-
+- Added muliple hooks to fetch data of movies
+- Enhanced the ui using ai like scroll and minor bug fixes in ui
 
 
 # PENDING

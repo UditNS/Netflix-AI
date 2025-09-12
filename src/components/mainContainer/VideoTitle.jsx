@@ -12,7 +12,7 @@ function VideoTitle({title, overview}) {
     }, []);
 
     return (
-        <div className='absolute inset-0 text-white bg-gradient-to-tr from-black via-transparent to-transparent flex flex-col justify-center pl-12 md:pl-16'>
+        <div className='absolute inset-0 text-white bg-gradient-to-tr from-black via-black/50 to-transparent flex flex-col justify-center pl-12 md:pl-16'>
             <div className="max-w-lg">
                 <h1 className={`transition-all text-3xl md:text-5xl font-extrabold mb-4 duration-1000 ${
                     showMiddle ? "translate-y-0 " : "translate-y-16 "
@@ -23,7 +23,7 @@ function VideoTitle({title, overview}) {
                     {overview}
                 </p>
                 <div className='flex space-x-4'>
-                    <button className='px-4 md:px-6 py-2 flex items-center font-semibold text-sm md:text-md bg-white hover:bg-gray-200 transition-colors duration-200 text-black rounded cursor-pointer'>
+                    <button className='px-4 md:px-6 py-2 flex items-center font-semibold text-sm md:text-xl bg-white hover:bg-gray-200 transition-colors duration-200 text-black rounded cursor-pointer'>
                         <svg fill="#000000" className='mr-2' height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xmlSpace="preserve">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -33,7 +33,7 @@ function VideoTitle({title, overview}) {
                         </svg>
                         Play
                     </button>
-                    <button className='px-4 md:px-6 py-2 bg-gray-500/60 hover:bg-gray-500/80 transition-colors duration-200 rounded flex items-center font-semibold text-sm md:text-md cursor-pointer backdrop-blur-sm'>
+                    <button className='px-4 md:px-6 py-2 bg-gray-500/60 hover:bg-gray-500/80 transition-colors duration-200 rounded flex items-center font-semibold text-sm md:text-xl cursor-pointer backdrop-blur-sm'>
                         <svg className='mr-2' height="20px" width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
