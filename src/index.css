@@ -3,7 +3,17 @@
     95% { opacity: 1; }
     100% { opacity: 0; }
 }
+@keyframes flare {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
+.animate-flare {
+  background-size: 300% 300%;
+  animation: flare 6s ease-in-out infinite;
+  mix-blend-mode: screen; 
+}
 @layer utilities {
   /* Hide scrollbars completely */
   .overflow-x-scroll::-webkit-scrollbar {
