@@ -7,11 +7,11 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 function Browse() {
     useNowPlayingMovies();
     return (
-        <>
+        <div>
             <Header />
             <MainContainer />
             <SecondaryContainer />
-        </>
+        </div>
         /* 
             MainContainer
             - VideoBackground

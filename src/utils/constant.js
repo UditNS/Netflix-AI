@@ -9,3 +9,5 @@ export const options = {
         Authorization: `Bearer ${import.meta.env.VITE_API_READ_ACCESS_TOKEN_TMDB}`
     }
 };
+
+export const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w780";

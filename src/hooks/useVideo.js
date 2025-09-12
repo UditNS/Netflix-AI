@@ -10,7 +10,6 @@ const useVideo = (movieId) => {
   const getVideos = async() => { 
     const data = await fetch(url, options); 
     const json = await data.json(); 
-    console.log(json);
     if(json)  {
       const trailer = json.results.filter((item) => (
         item.type === "Trailer" && item.name ==='Official Trailer' 
