@@ -10,7 +10,10 @@ function Browse() {
         <div>
             <Header />
             <MainContainer />
-            <SecondaryContainer />
+            {/* Add proper spacing for secondary container */}
+            <div className="relative -mt-32 z-20">
+                <SecondaryContainer />
+            </div>
         </div>
         /* 
             MainContainer

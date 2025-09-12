@@ -3,3 +3,39 @@
     95% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+@layer utilities {
+  /* Hide scrollbars completely */
+  .overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .overflow-x-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Netflix-style animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out forwards;
+}
+
+/* Custom hover effects for movie cards */
+.group:hover {
+  z-index: 20;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
