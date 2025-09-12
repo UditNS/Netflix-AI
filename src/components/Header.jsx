@@ -53,8 +53,8 @@ function Header() {
 
     }
     return (
-        <div className='absolute top-0 pt-0.5 pl-24 z-10 w-full flex  items-center justify-between bg-gradient-to-b from-black'>
-            <img className='w-48 h-20 object-contain ' 
+        <div className='absolute top-0 pt-0.5 pl-18 z-10 w-full flex  items-center justify-between bg-gradient-to-b from-black'>
+            <img className='w-40 h-20 object-contain ' 
             src={LOGO_URL} alt="Logo" />
             {user && (<div className='flex items-center space-x-4 mr-8 cursor-pointer'>
                 <img className='w-10 h-10' src={PROFILE_PLACEHOLDER} alt="userLogo" />

@@ -17,6 +17,14 @@
 - Unsubscribe to the onAuthStateChanged callback
 - Added hardcoded values to the constant string
 - Registered for TMDB api, along with that make an api call for now playing movies
+- Custom hook for now playing movies
+- custom hook to get video trailer
+- created the homepage inside the mainContainer 
+- created two component videoTitle and Videoplayback
+- VideoPlayback plays the trailer video in background
+- VideoTitle contain video title and overview.
+- Added css to fadeout the overview after 10 secs
+
 
 
 # PENDING

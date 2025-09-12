@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import MainContainer from './mainContainer/MainContainer'
-import SecondaryContainer from './SecondaryContainer'
+import SecondaryContainer from './secondarContainer/SecondaryContainer'
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 
 function Browse() {
