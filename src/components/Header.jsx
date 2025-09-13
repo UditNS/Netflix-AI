@@ -8,6 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { setUser, clearUser } from '../store/userSlice.js';   
 import { LOGO_URL, PROFILE_PLACEHOLDER } from '../utils/constant.js';
+import { toggleGptSearchView } from '../store/gptSlice.js';
 
 
 function Header() {
@@ -15,6 +16,8 @@ function Header() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector((state) => state.user.user);
+    
+
     // if the user is not logged in, then by typing /browse in the url, the user should be redirected to login page
     // if the user is logged in, then by typing / in the url, the user should be redirected to browse page
 
@@ -40,7 +43,10 @@ function Header() {
         // it unsubscribes the listener when the component unmounts
     },[])
 
-    
+    const handleGptSearch = (e) => {
+        e.preventDefault()
+        dispatch(toggleGptSearchView());
+    }
 
     const handleSignOut = (e) => {
         e.preventDefault();
@@ -58,10 +64,10 @@ function Header() {
             src={LOGO_URL} alt="Logo" />
             {user && (<div className='flex items-center space-x-4 mr-8 cursor-pointer'>
                 <img className='w-10 h-10' src={PROFILE_PLACEHOLDER} alt="userLogo" />
-                <button className="relative px-5 py-2.5 rounded-md font-semibold text-white/70 overflow-hidden group">
-                    <span className="absolute inset-0 bg-gradient-to-r from-pink-600 via-cyan-500 via-green-500 via-sky-500 to-purple-700 opacity-90 animate-flare"></span>
-                    <span className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-md"></span>
-                    <span className="relative z-10 drop-shadow-lg">Search</span>
+                <button onClick={handleGptSearch} className=" cursor-pointer relative px-5 py-2.5 rounded-md font-semibold text-white/70 overflow-hidden group">
+                    <span className="absolute inset-0 bg-gradient-to-l from-pink-500 via-cyan-500 via-lime-500 via-indigo-600 to-purple-700 opacity-90 hover:opacity-75   animate-flare"></span>
+                    <span className="absolute inset-0  bg-white/20 backdrop-blur-md rounded-md"></span>
+                    <span className="relative z-10  drop-shadow-lg">Search</span>
                 </button>
                 
                 <button onClick={handleSignOut} className='text-white hover:underline'>Sign Out</button>

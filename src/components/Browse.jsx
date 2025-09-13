@@ -6,7 +6,10 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 import usePopularMovies from '../hooks/usePopularMovies'
 import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import useUpcomingMovies from '../hooks/useUpcomingMovies'
+import GptSearchPage from './GPT/GptSearchPage'
+import { useSelector } from 'react-redux'
 function Browse() {
+    const gptView = useSelector((store) => store.gpt.showGptSearch);
     useNowPlayingMovies();
     usePopularMovies();
     useTopRatedMovies();
@@ -14,11 +17,16 @@ function Browse() {
     return (
         <div>
             <Header />
-            <MainContainer />
-            {/* Add proper spacing for secondary container */}
-            <div className="relative -mt-32 z-20">
-                <SecondaryContainer />
-            </div>
+            {gptView ? 
+            <GptSearchPage /> :
+            <> 
+                <MainContainer />
+                {/* Add proper spacing for secondary container */}
+                <div className="relative -mt-32 z-20">
+                    <SecondaryContainer />
+                </div>
+            </>}
+            
         </div>
         /* 
             MainContainer
